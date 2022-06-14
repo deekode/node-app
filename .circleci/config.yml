@@ -3,10 +3,10 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: "cimg/go:1.17"
+      - image: "cimg/node:17.2"
     steps:
       - checkout
-      - run: bash ./survey.sh -y
+      - run: cd app && npm run test
   build:
     docker:
       - image: cimg/go:1.17
